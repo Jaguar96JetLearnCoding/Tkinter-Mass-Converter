@@ -1,0 +1,30 @@
+import tkinter
+screen_main=tkinter.Tk()
+screen_main.geometry("600x300")
+def convert():
+    mass_kg=float(entry.get())
+    mass_g=mass_kg*1000
+    mass_lbs=mass_kg*2.2046226218488
+    mass_oz=mass_kg*35.27396194958
+    label_gram_result.config(text=mass_g)
+    label_pound_result.config(text=mass_lbs)
+    label_ounce_result.config(text=mass_oz)
+label_main=tkinter.Label(screen_main,text="Enter the Mass in Kilograms (Kg)")
+label_gram=tkinter.Label(screen_main,text="Grams (g)")
+label_pound=tkinter.Label(screen_main,text="Pounds (lbs)")
+label_ounce=tkinter.Label(screen_main,text="Ounces (oz)")
+label_gram_result=tkinter.Label(screen_main,text="")
+label_pound_result=tkinter.Label(screen_main,text="")
+label_ounce_result=tkinter.Label(screen_main,text="")
+entry=tkinter.Entry(screen_main)
+button=tkinter.Button(screen_main,text="Convert",command=convert)
+label_main.grid(row=1,column=1)
+label_gram.grid(row=2,column=1)
+label_pound.grid(row=2,column=2)
+label_ounce.grid(row=2,column=3)
+label_gram_result.grid(row=3,column=1)
+label_pound_result.grid(row=3,column=2)
+label_ounce_result.grid(row=3,column=3)
+entry.grid(row=1,column=2)
+button.grid(row=1,column=3)
+screen_main.mainloop()
